@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme {
+  --font-display: "Satoshi", sans-serif;
+  --font-clash: "Clash", sans-serif;
+
+  /* Breakpoints */
+  --breakpoint-3xl: 120rem;
+  --breakpoint-menu: 1045px;
+
+  /* Colors (from your Tailwind config) */
+  --color-background: var(--background);
+  /* these refer to the CSS variables below */
+  --color-foreground: var(--foreground);
+  --color-mainColor3: #C45EEC;
+  --color-alertColor2: #7D7979;
+  --color-mainColor2: #F6EEE3;
+  --color-subTitleGray: #B3ADA5;
+  --color-purple500: #7b75ad;
+  --color-purple700: #36344c;
+  --color-bg: #161516;
+  --color-inputBg: #201f20;
+
+  /* Additional Experimental Colors */
+  --color-avocado-100: oklch(0.99 0 0);
+  --color-avocado-200: oklch(0.98 0.04 113.22);
+  --color-avocado-300: oklch(0.94 0.11 115.03);
+  --color-avocado-400: oklch(0.92 0.19 114.08);
+  --color-avocado: oklch(0.84 0.18 117.33);
+  --color-avocado-600: oklch(0.53 0.12 118.34);
+
+  /* Easing Functions */
+  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Custom Background Gradient (from your backgroundImage) */
+  --bg-custom-gradient: linear-gradient(to right,
+      #FF0FFD 0%,
+      #006FFC 38%,
+      #D73DE5 57%,
+      #EDB547 64%,
+      #6E5EEE 68%,
+      #85AE87 79%,
+      #197DF7 93%);
+
+  /* Spacing */
+  --spacing-60: 60px;
+
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
