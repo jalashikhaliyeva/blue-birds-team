@@ -10,7 +10,7 @@ function OurCollections() {
           Our Collections
         </h3>
 
-        <div className="flex gap-4  md:gap-20 uppercase text-2xl pb-16">
+        <div className="flex gap-3  md:gap-20 uppercase text-lg md:text-2xl pb-16">
           <p>All</p>
           <p>Listed</p>
           <p>New</p>
