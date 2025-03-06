@@ -2,19 +2,85 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #ffffff;
+}
+
+
+@font-face {
+  font-family: "Oswald";
+  src: url("/fonts/Oswald/static/Oswald-Light.ttf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Oswald";
+  src: url("/fonts/Oswald/static/Oswald-Regular.ttf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: url("/fonts/Oswald/static/Oswald-Medium.ttf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: url("/fonts/Oswald/static/Oswald-Bold.ttf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: url("/fonts/Oswald/static/Oswald-SemiBold.ttf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins/Poppins-Regular.ttf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins/Poppins-Medium.ttf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins/Poppins-Bold.ttf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins/Poppins-SemiBold.ttf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
 }
 
 @theme {
-  --font-display: "Satoshi", sans-serif;
-  --font-clash: "Clash", sans-serif;
+  --font-oswald: "Oswald", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
 
   /* Breakpoints */
   --breakpoint-3xl: 120rem;
-  --breakpoint-menu: 1045px;
+  --breakpoint-xxl: 1667px;
 
   /* Colors (from your Tailwind config) */
   --color-background: var(--background);
+  --color-mainColorLight: #5EBBEC;
+  --color-mainColorDark: #1C2759;
   /* these refer to the CSS variables below */
   --color-foreground: var(--foreground);
   --color-mainColor3: #C45EEC;
@@ -50,14 +116,15 @@
 
   /* Spacing */
   --spacing-60: 60px;
+  --text-140: 160px;
 
 }
 
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #ffffff;
   }
 }
 
