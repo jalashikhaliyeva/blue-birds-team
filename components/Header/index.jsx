@@ -9,7 +9,7 @@ import {
 function Header() {
   return (
     <div className="flex justify-between">
-      <div className="flex w-[220px]">
+      <div className="flex w-[160px] md:w-[220px]">
         <Image
           src="/images/logo/logo2.png"
           alt="Logo Blue Birds"
@@ -24,16 +24,16 @@ function Header() {
 
       <div className="flex items-center gap-2">
         <div className="bg-mainColorDark text-white p-2 rounded-lg cursor-pointer">
-          <FaFacebookF className="fill-white text-2xl" />
+          <FaFacebookF className="fill-white text-lg md:text-2xl" />
         </div>
         <div className="bg-mainColorDark text-white p-2 rounded-lg cursor-pointer">
-          <FaInstagram className="fill-white text-2xl" />
+          <FaInstagram className="fill-white text-lg md:text-2xl" />
         </div>
         <div className="bg-mainColorDark text-white p-2 rounded-lg cursor-pointer">
-          <FaTwitter className="fill-white text-2xl" />
+          <FaTwitter className="fill-white text-lg md:text-2xl" />
         </div>
         <div className="bg-mainColorDark text-white p-2 rounded-lg cursor-pointer">
-          <FaGooglePlusG className="fill-white text-2xl" />
+          <FaGooglePlusG className="fill-white text-lg md:text-2xl" />
         </div>
       </div>
     </div>

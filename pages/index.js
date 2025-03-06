@@ -32,7 +32,7 @@ export default function Home({
           <About />
         </Container>
 
-        {/* Absolutely position the image and set a high z-index via inline style */}
+     
         <div
           className="absolute hidden md:flex inset-0  items-center justify-center pt-[120px] xxl:pt-[100px]"
           style={{ zIndex: 9999 }}
@@ -40,7 +40,7 @@ export default function Home({
           <img
             src="/images/team-birds/Cocky.png"
             alt="Cocky"
-            className="h-[1899px] xxl:h-[1900px]"
+            className="h-[1729px] xxl:h-[1740px]"
           />
         </div>
       </div>
@@ -52,7 +52,7 @@ export default function Home({
         autoScrollOptions={autoScrollLeft}
       />
 
-      <OurCollections /> 
+      <OurCollections />
       <EmblaCarousel
         slides={slides}
         options={OPTIONS}

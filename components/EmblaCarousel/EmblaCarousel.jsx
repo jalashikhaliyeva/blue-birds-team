@@ -42,7 +42,7 @@ const EmblaCarousel = ({ slides, options, autoScrollOptions }) => {
           }}
         >
           <span
-            className="text-mainColorDark font-oswald font-semibold text-140 uppercase"
+            className="text-mainColorDark font-oswald font-semibold text-6xl  md:text-140 uppercase"
             style={{ whiteSpace: "nowrap" }} // Ensure the text doesn't wrap.
           >
             {pairText}
@@ -53,7 +53,8 @@ const EmblaCarousel = ({ slides, options, autoScrollOptions }) => {
               key={`img-${i}`}
               src={images[(i / 2) % images.length]}
               alt="bird head"
-              style={{ margin: "0 8px", width: "180px" }}
+              className="w-[160px] md:w-[180px]"
+        
             />
           )}
         </span>

@@ -1,6 +1,7 @@
 import React from "react";
 import Container from "../Container";
 import Image from "next/image";
+import styles from './style.module.css'
 
 function Beats() {
   return (
@@ -11,7 +12,7 @@ function Beats() {
         </h4>
 
         <div className="flex flex-col lg:flex-row justify-between items-center">
-          <p className="font-poppins text-base md:text-lg max-w-full md:max-w-[300px] py-6 md:py-9">
+          <p  data-aos="fade-right" className="font-poppins text-base md:text-lg max-w-full md:max-w-[300px] py-6 md:py-9">
             A true{" "}
             <span className="font-semibold">
               2D Digital Collectiable project
@@ -24,7 +25,7 @@ function Beats() {
             <Image
               src={`/images/birds-heads/3.png`}
               alt="Bird head"
-              className="w-[100px] md:w-[200px] brightness-0 invert absolute top-[-65px] md:top-[-130px] right-[-30px] md:right-[-60px] z-[99]"
+              className={`${styles.headAnimation} w-[100px] md:w-[200px] brightness-0 invert absolute top-[-65px] md:top-[-130px] right-[-30px] md:right-[-60px] z-[99]`}
               width={200}
               height={200}
             />
