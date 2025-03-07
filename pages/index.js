@@ -28,15 +28,9 @@ export default function Home({
           <Slider />
         </div>
 
-        <Container>
-          <About />
-        </Container>
+        <About />
 
-     
-        <div
-          className="absolute hidden md:flex inset-0  items-center justify-center pt-[120px] xxl:pt-[100px]"
-          style={{ zIndex: 9999 }}
-        >
+        <div className="absolute hidden md:flex inset-0 z-[9999]  items-center justify-center pt-[120px] xxl:pt-[100px]">
           <img
             src="/images/team-birds/Cocky.png"
             alt="Cocky"

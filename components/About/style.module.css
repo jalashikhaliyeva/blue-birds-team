@@ -1,0 +1,35 @@
+.marquee {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 999999;
+    /* padding-bottom: 50px; */
+    /* padding-bottom: 200px; */
+    /* padding-bottom: 100px; */
+}
+
+.marquee__inner {
+    display: flex;
+    gap: 600px;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+}
+
+.marquee__inner img {
+    height: 150px !important;
+    margin-right: 150px;
+}
+
+/* New class to reverse the animation direction */
+.reverse {
+    animation-direction: reverse;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-60%);
+    }
+}
