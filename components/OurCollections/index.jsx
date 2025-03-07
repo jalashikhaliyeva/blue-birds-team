@@ -6,7 +6,7 @@ function OurCollections() {
   return (
     <div className="bg-mainColorDark py-20">
       <Container>
-        <h3 className="uppercase text-3xl md:text-8xl font-oswald font-semibold text-center pb-10">
+        <h3 className="uppercase text-3xl md:text-6xl font-oswald font-semibold text-center pb-10">
           Our Collections
         </h3>
 
@@ -28,6 +28,7 @@ function OurCollections() {
                 width={200}
                 height={500}
                 quality={100}
+                alt="Tvity"
                 className="w-[300px]"
               />
             </div>
@@ -43,6 +44,7 @@ function OurCollections() {
                 width={200}
                 height={500}
                 quality={100}
+                alt="Tengu"
                 className="w-[300px]"
               />
             </div>
@@ -57,6 +59,7 @@ function OurCollections() {
                 src={"/images/team-birds/Cocky.png"}
                 width={200}
                 height={500}
+                alt="Cocky"
                 quality={100}
                 className="w-[300px]"
               />
@@ -72,6 +75,7 @@ function OurCollections() {
                 src={"/images/team-birds/Bykush.png"}
                 width={200}
                 height={500}
+                alt="Bykush"
                 quality={100}
                 className="w-[300px]"
               />

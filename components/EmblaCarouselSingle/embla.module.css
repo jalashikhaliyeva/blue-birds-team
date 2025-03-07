@@ -31,7 +31,7 @@
 }
 
 .embla__slide {
-  flex: 0 0 180px;
+  flex: 0 0 120px;
   /* min-width: 0; */
   padding-left: 0.5rem;
   cursor: pointer;

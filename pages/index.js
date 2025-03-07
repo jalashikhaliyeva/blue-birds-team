@@ -5,41 +5,62 @@ import EmblaCarousel from "@/components/EmblaCarouselSingle/EmblaCarousel";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import OurCollections from "@/components/OurCollections";
+import Shop from "@/components/Shop";
 import Slider from "@/components/Slider";
 import Team from "@/components/Team";
 import ViewOnOpenSea from "@/components/ViewOnOpenSea";
+import { getAbout, getHero, getSettings, getSlider } from "@/lib/api";
+import Image from "next/image";
 
-export default function Home({
-  // Create 11 slides, each with an array of two images.
-  slides = Array.from({ length: 21 }, () => ({
-    images: ["/images/birds-heads/1.png", "/images/logo/logo2.png"],
-  })),
-}) {
+export async function getServerSideProps() {
+  try {
+    const hero = await getHero();
+    const settings = await getSettings();
+    const about = await getAbout();
+    const slider = await getSlider();
+    return { props: { hero, settings, about, slider } };
+  } catch (error) {
+    return { props: { settings: null, hero: null, about: null, slider: null } };
+  }
+}
+
+export default function Home({ settings, hero, about, slider }) {
+  console.log(slider, "slider");
+
   const OPTIONS = { loop: true };
   const autoScrollLeft = { playOnInit: true, interval: 8000, speed: -1 };
+  const slides = Array.from({ length: 22 }, (_, i) => {
+    const item = slider.data[i % slider.data.length];
+    return {
+      images: [item.icon, item.image],
+    };
+  });
 
   return (
     <>
-      <div className="relative bg-[url('/images/bg/illustration.jpg')] bg-no-repeat bg-cover bg-bottom min-h-screen">
+      <div
+        className="relative bg-no-repeat bg-cover bg-bottom min-h-screen p-0"
+        style={{ backgroundImage: `url(${hero.hero.background})` }}
+      >
         <Container>
-          <Header />
+          <Header props={settings.main} />
         </Container>
         <div className="z-10">
           <Slider />
         </div>
-
-        <About />
-
+        <About props={hero.hero} />
         <div className="absolute hidden md:flex inset-0 z-[9999]  items-center justify-center pt-[120px] xxl:pt-[100px]">
-          <img
-            src="/images/team-birds/Cocky.png"
+          <Image
+            src={hero.hero.icon}
             alt="Cocky"
-            className="h-[1729px] xxl:h-[1740px]"
+            width={1500}
+            height={1900}
+            className="h-[1900px] xxl:h-[1940px]"
           />
         </div>
       </div>
 
-      <Beats />
+      <Beats props={about.data} />
       <EmblaCarousel
         slides={slides}
         options={OPTIONS}
@@ -54,8 +75,9 @@ export default function Home({
       />
 
       <ViewOnOpenSea />
+      <Shop />
       <Team />
-      <Footer />
+      <Footer props={settings.main} />
     </>
   );
 }

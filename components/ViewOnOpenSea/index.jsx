@@ -5,7 +5,7 @@ import Container from "../Container";
 function ViewOnOpenSea() {
   return (
     <div className="bg-mainColorDark pt-12">
-      <h4 className="uppercase text-3xl md:text-8xl font-oswald font-semibold text-center pb-10">
+      <h4 className="uppercase text-3xl md:text-6xl font-oswald font-semibold text-center pb-10">
         View on Opensea
       </h4>
 
@@ -19,6 +19,7 @@ function ViewOnOpenSea() {
               <Image
                 width={400}
                 height={500}
+                alt="Bykush"
                 src={"/images/team-birds/Bykush.png"}
               />
             </div>
@@ -29,6 +30,7 @@ function ViewOnOpenSea() {
               <Image
                 width={400}
                 height={500}
+                alt="Cocky"
                 src={"/images/team-birds/Cocky.png"}
               />
             </div>
@@ -39,6 +41,7 @@ function ViewOnOpenSea() {
               <Image
                 width={400}
                 height={500}
+                alt="Tengu"
                 src={"/images/team-birds/Tengu.png"}
               />
             </div>
@@ -49,6 +52,7 @@ function ViewOnOpenSea() {
               <Image
                 width={400}
                 height={500}
+                alt="Tvity"
                 src={"/images/team-birds/Tvity.png"}
               />
             </div>

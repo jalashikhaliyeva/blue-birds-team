@@ -6,12 +6,12 @@ import {
   FaGooglePlusG,
   FaFacebookF,
 } from "react-icons/fa";
-function Header() {
+function Header({props}) {
   return (
-    <div className="flex justify-between">
-      <div className="flex w-[160px] md:w-[220px]">
+    <div className="flex justify-between p-0">
+      <div className="flex w-[160px] md:w-[240px] p-0">
         <Image
-          src="/images/logo/logo2.png"
+          src={props.image}
           alt="Logo Blue Birds"
           layout="shift"
           placeholder="blur"
@@ -24,16 +24,16 @@ function Header() {
 
       <div className="flex items-center gap-2">
         <div className="bg-mainColorDark text-white p-2 rounded-lg cursor-pointer">
-          <FaFacebookF className="fill-white text-lg md:text-2xl" />
+          <FaFacebookF className="fill-white text-sm md:text-lg" />
         </div>
         <div className="bg-mainColorDark text-white p-2 rounded-lg cursor-pointer">
-          <FaInstagram className="fill-white text-lg md:text-2xl" />
+          <FaInstagram className="fill-white text-sm md:text-lg" />
         </div>
         <div className="bg-mainColorDark text-white p-2 rounded-lg cursor-pointer">
-          <FaTwitter className="fill-white text-lg md:text-2xl" />
+          <FaTwitter className="fill-white text-sm md:text-lg" />
         </div>
         <div className="bg-mainColorDark text-white p-2 rounded-lg cursor-pointer">
-          <FaGooglePlusG className="fill-white text-lg md:text-2xl" />
+          <FaGooglePlusG className="fill-white text-sm md:text-lg" />
         </div>
       </div>
     </div>
