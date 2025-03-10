@@ -9,7 +9,7 @@ import Shop from "@/components/Shop";
 import Slider from "@/components/Slider";
 import Team from "@/components/Team";
 import ViewOnOpenSea from "@/components/ViewOnOpenSea";
-import { getAbout, getHero, getSettings, getSlider } from "@/lib/api";
+import { getAbout, getCategory, getHero, getSettings, getSlider, getTeams } from "@/lib/api";
 import Image from "next/image";
 
 export async function getServerSideProps() {
@@ -18,14 +18,17 @@ export async function getServerSideProps() {
     const settings = await getSettings();
     const about = await getAbout();
     const slider = await getSlider();
-    return { props: { hero, settings, about, slider } };
+    const category = await getCategory();
+    const team = await getTeams()
+    return { props: { hero, settings, about, slider , category , team} };
   } catch (error) {
-    return { props: { settings: null, hero: null, about: null, slider: null } };
+    return { props: { settings: null, hero: null, about: null, slider: null , category: null  , team: null} };
   }
 }
 
-export default function Home({ settings, hero, about, slider }) {
-  console.log(slider, "slider");
+export default function Home({ settings, hero, about, slider ,category , team}) {
+
+console.log(settings, "settings");
 
   const OPTIONS = { loop: true };
   const autoScrollLeft = { playOnInit: true, interval: 8000, speed: -1 };
@@ -46,7 +49,7 @@ export default function Home({ settings, hero, about, slider }) {
           <Header props={settings.main} />
         </Container>
         <div className="z-10">
-          <Slider />
+          <Slider slidesData={hero.slider} />
         </div>
         <About props={hero.hero} />
         <div className="absolute hidden md:flex inset-0 z-[9999]  items-center justify-center pt-[120px] xxl:pt-[100px]">
@@ -67,16 +70,16 @@ export default function Home({ settings, hero, about, slider }) {
         autoScrollOptions={autoScrollLeft}
       />
 
-      <OurCollections />
+      <OurCollections collectionCharacters={category} />
       <EmblaCarousel
         slides={slides}
         options={OPTIONS}
         autoScrollOptions={autoScrollLeft}
       />
 
-      <ViewOnOpenSea />
-      <Shop />
-      <Team />
+      <ViewOnOpenSea collectionCharacters={category} />
+      <Shop  collectionCharacters={category}  />
+      <Team  teamData={team}/>
       <Footer props={settings.main} />
     </>
   );

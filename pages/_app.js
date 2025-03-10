@@ -3,6 +3,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export default function App({ Component, pageProps }) {
   const router = useRouter();
   useEffect(() => {
@@ -31,5 +33,10 @@ export default function App({ Component, pageProps }) {
     };
   }, [router]);
 
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Component {...pageProps} />
+      <ToastContainer />
+    </>
+  );
 }

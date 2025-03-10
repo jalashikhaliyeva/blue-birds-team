@@ -9,58 +9,48 @@ const EmblaCarousel = ({ slides, options, autoScrollOptions }) => {
   const [emblaRef] = useEmblaCarousel(options, [AutoScroll(autoScrollOptions)]);
   const router = useRouter();
   const isAboutPage = router.pathname === "/about";
-
-  // Center slides if there are fewer than 10
   const shouldCenter = slides.length < 10;
 
-  // Helper function that renders text with images after every 2 words.
-  const renderSlideContent = (text) => {
-    // Split the text and filter out any empty strings.
-    const words = text.split(" ").filter((word) => word.trim() !== "");
-    const images = [
-      "/images/birds-heads/1.png",
-      "/images/birds-heads/2.png",
-      "/images/birds-heads/3.png",
-    ];
+  const renderSlideContent = (slide) => {
+    const words = slide.text.split(" ").filter((word) => word.trim() !== "");
     const segments = [];
 
-    // Process words in pairs.
+    // Group words into pairs
     for (let i = 0; i < words.length; i += 2) {
       let pairText = words[i];
       if (i + 1 < words.length) {
         pairText += " " + words[i + 1];
       }
-      segments.push(
-        <span
-          key={`segment-${i}`}
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            whiteSpace: "nowrap", // Prevent wrapping within this container.
-            marginRight: "176px", // Optional spacing between segments.
-            marginLeft: "46px", // Optional spacing between segments.
-          }}
-        >
-          <span
-            className="text-mainColorDark font-oswald font-semibold text-6xl  md:text-140 uppercase"
-            style={{ whiteSpace: "nowrap" }} // Ensure the text doesn't wrap.
-          >
-            {pairText}
-          </span>
-          {/* Only add an image if there is a complete pair */}
-          {i + 1 < words.length && (
+      segments.push(pairText);
+    }
+
+    return segments.map((pairText, index) => (
+      <span
+        key={`segment-${index}`}
+        style={{
+          display: "inline-flex",
+          alignItems: "center",
+          whiteSpace: "nowrap",
+          marginLeft: index === 0 ? "0" : "46px",
+          marginRight: index === segments.length - 1 ? "0" : "130px",
+        }}
+      >
+        <span className="text-mainColorDark font-oswald font-semibold text-6xl md:text-140 uppercase">
+          {pairText}
+        </span>
+        {/* Add image for all but the last segment */}
+        {index < segments.length - 1 &&
+          slide.icons &&
+          slide.icons.length > 0 && (
             <img
-              key={`img-${i}`}
-              src={images[(i / 2) % images.length]}
+              key={`img-${index}`}
+              src={slide.icons[index % slide.icons.length]}
               alt="bird head"
-              className="w-[160px] md:w-[180px]"
-        
+              className="w-[160px] md:w-[190px] pt-[20px]"
             />
           )}
-        </span>
-      );
-    }
-    return segments;
+      </span>
+    ));
   };
 
   return (
@@ -78,7 +68,7 @@ const EmblaCarousel = ({ slides, options, autoScrollOptions }) => {
                   isAboutPage ? styles.boxWhite : ""
                 }`}
               >
-                {renderSlideContent(slide.text)}
+                {renderSlideContent(slide)}
               </div>
             </div>
           ))}

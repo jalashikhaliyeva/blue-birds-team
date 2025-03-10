@@ -7,10 +7,28 @@ import {
 } from "react-icons/fa";
 import Container from "../Container";
 import Image from "next/image";
+import { postSubscription } from "../../lib/api";
+import { toast } from "react-toastify"; // Only import toast here
 
-function Footer({props}) {
+function Footer({ props }) {
   const [isEditing, setIsEditing] = useState(false);
   const [email, setEmail] = useState("");
+
+  const handleKeyDown = async (e) => {
+    if (e.key === "Enter") {
+      if (!email.includes("@")) {
+        toast.error("Please enter a valid email address.");
+        return;
+      }
+      try {
+        await postSubscription(email);
+        toast.success("Subscription successful!");
+        setIsEditing(false);
+      } catch (error) {
+        toast.error("There was an error subscribing. Please try again.");
+      }
+    }
+  };
 
   return (
     <Container>
@@ -26,7 +44,6 @@ function Footer({props}) {
         <div className="flex flex-col">
           <div className="w-[220px]">
             <Image
-              // src="/images/logo/logo-3.png"
               src={props.image}
               alt="Logo Blue Birds"
               layout="shift"
@@ -39,7 +56,7 @@ function Footer({props}) {
           </div>
           <div className="flex items-center gap-2 mt-4">
             <div className="bg-mainColorDark text-white p-2 rounded-lg cursor-pointer">
-              <FaFacebookF className="fill-white  md:text-lg" />
+              <FaFacebookF className="fill-white md:text-lg" />
             </div>
             <div className="bg-mainColorDark text-white p-2 rounded-lg cursor-pointer">
               <FaInstagram className="fill-white md:text-lg" />
@@ -63,6 +80,7 @@ function Footer({props}) {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               onBlur={() => setIsEditing(false)}
+              onKeyDown={handleKeyDown}
               autoFocus
               placeholder="Your mail"
               className="uppercase text-mainColorDark text-2xl font-thin font-oswald pt-5 outline-none"
