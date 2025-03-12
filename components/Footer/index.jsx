@@ -44,7 +44,7 @@ function Footer({ props }) {
         <div className="flex flex-col">
           <div className="w-[220px]">
             <Image
-              src={props.image}
+              src={props.main.image}
               alt="Logo Blue Birds"
               layout="shift"
               placeholder="blur"
@@ -55,18 +55,28 @@ function Footer({ props }) {
             />
           </div>
           <div className="flex items-center gap-2 mt-4">
-            <div className="bg-mainColorDark text-white p-2 rounded-lg cursor-pointer">
-              <FaFacebookF className="fill-white md:text-lg" />
-            </div>
-            <div className="bg-mainColorDark text-white p-2 rounded-lg cursor-pointer">
-              <FaInstagram className="fill-white md:text-lg" />
-            </div>
-            <div className="bg-mainColorDark text-white p-2 rounded-lg cursor-pointer">
-              <FaTwitter className="fill-white md:text-lg" />
-            </div>
-            <div className="bg-mainColorDark text-white p-2 rounded-lg cursor-pointer">
-              <FaGooglePlusG className="fill-white md:text-lg" />
-            </div>
+            {props.social_link &&
+              props.social_link.map((social, index) => (
+                <a
+                  key={index}
+                  href={
+                    social.link.startsWith("http")
+                      ? social.link
+                      : `https://${social.link}`
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-mainColorDark p-2 rounded-lg cursor-pointer"
+                >
+                  <Image
+                    src={social.icon}
+                    alt="social icon"
+                    width={20}
+                    height={20}
+                    className="brightness-0 invert"
+                  />
+                </a>
+              ))}
           </div>
         </div>
         {/* Right Section */}

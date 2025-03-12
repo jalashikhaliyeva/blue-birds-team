@@ -10,13 +10,13 @@
 
 .marquee__inner {
     display: flex;
-    gap: 600px;
+    gap: 700px;
     width: max-content;
     animation: marquee 30s linear infinite;
 }
 
 .marquee__inner img {
-    height: 150px !important;
+    height: 100px !important;
     margin-right: 150px;
 }
 

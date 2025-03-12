@@ -31,6 +31,15 @@ function Beats({ props }) {
               height={200}
             />
 
+            <Image
+              src={props.image_1}
+              alt="Bird head"
+              className="w-[300px] md:w-[700px] relative z-20 "
+              width={700}
+              height={700}
+              quality={100}
+            />
+            {/* 
             <div className="absolute top-[-30px] md:top-[-60px] left-[-50px] md:left-[-100px] w-[285px] md:w-[570px] h-[275px] md:h-[550px] bg-white opacity-90 z-10"></div>
             <div className="absolute top-[0px] left-[0px] w-[310px] md:w-[620px] h-[265px] md:h-[530px] bg-white opacity-50 z-10"></div>
 
@@ -47,7 +56,7 @@ function Beats({ props }) {
               className="w-[200px] md:w-[400px] ml-[-100px] md:ml-[-200px] relative z-20 opacity-40"
               width={200}
               height={200}
-            />
+            /> */}
           </div>
         </div>
       </Container>

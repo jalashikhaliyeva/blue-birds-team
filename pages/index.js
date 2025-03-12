@@ -9,7 +9,14 @@ import Shop from "@/components/Shop";
 import Slider from "@/components/Slider";
 import Team from "@/components/Team";
 import ViewOnOpenSea from "@/components/ViewOnOpenSea";
-import { getAbout, getCategory, getHero, getSettings, getSlider, getTeams } from "@/lib/api";
+import {
+  getAbout,
+  getCategory,
+  getHero,
+  getSettings,
+  getSlider,
+  getTeams,
+} from "@/lib/api";
 import Image from "next/image";
 
 export async function getServerSideProps() {
@@ -19,16 +26,31 @@ export async function getServerSideProps() {
     const about = await getAbout();
     const slider = await getSlider();
     const category = await getCategory();
-    const team = await getTeams()
-    return { props: { hero, settings, about, slider , category , team} };
+    const team = await getTeams();
+    return { props: { hero, settings, about, slider, category, team } };
   } catch (error) {
-    return { props: { settings: null, hero: null, about: null, slider: null , category: null  , team: null} };
+    return {
+      props: {
+        settings: null,
+        hero: null,
+        about: null,
+        slider: null,
+        category: null,
+        team: null,
+      },
+    };
   }
 }
 
-export default function Home({ settings, hero, about, slider ,category , team}) {
-
-console.log(settings, "settings");
+export default function Home({
+  settings,
+  hero,
+  about,
+  slider,
+  category,
+  team,
+}) {
+  console.log(settings, "settings");
 
   const OPTIONS = { loop: true };
   const autoScrollLeft = { playOnInit: true, interval: 8000, speed: -1 };
@@ -46,7 +68,7 @@ console.log(settings, "settings");
         style={{ backgroundImage: `url(${hero.hero.background})` }}
       >
         <Container>
-          <Header props={settings.main} />
+          <Header props={settings} />
         </Container>
         <div className="z-10">
           <Slider slidesData={hero.slider} />
@@ -58,7 +80,7 @@ console.log(settings, "settings");
             alt="Cocky"
             width={1500}
             height={1900}
-            className="h-[1900px] xxl:h-[1940px]"
+            className="h-[1795px] xxl:h-[1820px]"
           />
         </div>
       </div>
@@ -78,9 +100,9 @@ console.log(settings, "settings");
       />
 
       <ViewOnOpenSea collectionCharacters={category} />
-      <Shop  collectionCharacters={category}  />
-      <Team  teamData={team}/>
-      <Footer props={settings.main} />
+      <Shop collectionCharacters={category} />
+      <Team teamData={team} />
+      <Footer props={settings} />
     </>
   );
 }
