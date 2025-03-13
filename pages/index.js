@@ -17,6 +17,7 @@ import {
   getSlider,
   getTeams,
 } from "@/lib/api";
+import { getOpenSeaAssets } from "@/lib/openseaApi";
 import Image from "next/image";
 
 export async function getServerSideProps() {
@@ -27,6 +28,7 @@ export async function getServerSideProps() {
     const slider = await getSlider();
     const category = await getCategory();
     const team = await getTeams();
+
     return { props: { hero, settings, about, slider, category, team } };
   } catch (error) {
     return {
@@ -50,8 +52,6 @@ export default function Home({
   category,
   team,
 }) {
-  console.log(settings, "settings");
-
   const OPTIONS = { loop: true };
   const autoScrollLeft = { playOnInit: true, interval: 8000, speed: -1 };
   const slides = Array.from({ length: 22 }, (_, i) => {
@@ -74,13 +74,13 @@ export default function Home({
           <Slider slidesData={hero.slider} />
         </div>
         <About props={hero.hero} />
-        <div className="absolute hidden md:flex inset-0 z-[9999]  items-center justify-center pt-[120px] xxl:pt-[100px]">
+        <div className="absolute hidden md:flex inset-0  z-[9999]  items-center justify-center pt-[120px] xxl:pt-[100px]">
           <Image
             src={hero.hero.icon}
             alt="Cocky"
             width={1500}
             height={1900}
-            className="h-[1795px] xxl:h-[1820px]"
+            className="h-[2055px] xxl:h-[2120px]"
           />
         </div>
       </div>
