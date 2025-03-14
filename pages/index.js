@@ -11,9 +11,12 @@ import Team from "@/components/Team";
 import ViewOnOpenSea from "@/components/ViewOnOpenSea";
 import {
   getAbout,
+  getCategories,
   getCategory,
   getHero,
+  getProducts,
   getSettings,
+  getShops,
   getSlider,
   getTeams,
 } from "@/lib/api";
@@ -27,9 +30,24 @@ export async function getServerSideProps() {
     const about = await getAbout();
     const slider = await getSlider();
     const category = await getCategory();
+    const categories = await getCategories();
     const team = await getTeams();
+    const products = await getProducts();
+    const shopProducts = await getShops();
 
-    return { props: { hero, settings, about, slider, category, team } };
+    return {
+      props: {
+        hero,
+        settings,
+        about,
+        slider,
+        category,
+        team,
+        categories,
+        products,
+        shopProducts,
+      },
+    };
   } catch (error) {
     return {
       props: {
@@ -39,6 +57,9 @@ export async function getServerSideProps() {
         slider: null,
         category: null,
         team: null,
+        categories: null,
+        products: null,
+        shopProducts: null,
       },
     };
   }
@@ -51,6 +72,9 @@ export default function Home({
   slider,
   category,
   team,
+  categories,
+  products,
+  shopProducts,
 }) {
   const OPTIONS = { loop: true };
   const autoScrollLeft = { playOnInit: true, interval: 8000, speed: -1 };
@@ -78,9 +102,10 @@ export default function Home({
           <Image
             src={hero.hero.icon}
             alt="Cocky"
-            width={1500}
+            width={3300}
             height={1900}
-            className="h-[2055px] xxl:h-[2120px]"
+            quality={100}
+            className="h-[2000px] xxl:h-[2120px]"
           />
         </div>
       </div>
@@ -92,7 +117,11 @@ export default function Home({
         autoScrollOptions={autoScrollLeft}
       />
 
-      <OurCollections collectionCharacters={category} />
+      <OurCollections
+        products={products}
+        categories={categories}
+        collectionCharacters={category}
+      />
       <EmblaCarousel
         slides={slides}
         options={OPTIONS}
@@ -100,7 +129,7 @@ export default function Home({
       />
 
       <ViewOnOpenSea collectionCharacters={category} />
-      <Shop collectionCharacters={category} />
+      <Shop shopProducts={shopProducts} collectionCharacters={category} />
       <Team teamData={team} />
       <Footer props={settings} />
     </>

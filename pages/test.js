@@ -1,37 +1,33 @@
-import { useEffect } from 'react';
+import { getCollection, getCollections } from '@/lib/openseaApi';
+import React from 'react'
 
 export async function getServerSideProps() {
-  const options = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      'x-api-key': process.env.OPENSEA_API_KEY,
-    },
-  };
+  try {
+    const data = await getCollections();
+    const singleCollection = await getCollection(`keke-genesis-exit-vectors`)
+  
 
-  const res = await fetch('https://api.opensea.io/api/v2/collections/bluebirdsteam', options);
-  if (!res.ok) {
-    return { props: { error: 'Failed to fetch data' } };
+    return { props: { data , singleCollection } };
+  } catch (error) {
+    return {
+      props: {
+       
+        data: null,
+        singleCollection:  null,
+      
+      },
+    };
   }
-  const data = await res.json();
-
-  return {
-    props: { data },
-  };
 }
 
-export default function Test({ data, error }) {
-  useEffect(() => {
-    console.log('OpenSea data (client):', data);
-  }, [data]);
 
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
+function Test({data , singleCollection}) {
+  console.log(data, "data");
+  console.log(singleCollection, "singleCollection");
+  
   return (
-    <div>
-      <h1>OpenSea API Collection Data</h1>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
-    </div>
-  );
+    <div>Test</div>
+  )
 }
+
+export default Test

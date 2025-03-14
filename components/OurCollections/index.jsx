@@ -1,8 +1,37 @@
-import React from "react";
-import Container from "../Container";
-import Image from "next/image";
+// components/OurCollections.jsx
 
-function OurCollections({ collectionCharacters }) {
+import React, { useState } from "react";
+import Container from "../Container";
+import SliderEmbla from "../EmblaCarouselAdvantage/EmblaCarousel";
+import {
+  getProductsByCategory,
+  getProducts, // For the "All" case
+  getNewProducts, // For the "New" case
+} from "@/lib/api";
+
+function OurCollections({ categories, products }) {
+  const [activeProducts, setActiveProducts] = useState(products);
+  const handleCategoryClick = async (catIdOrString) => {
+    try {
+      let fetchedProducts;
+
+      if (catIdOrString === "all") {
+        // "All"
+        fetchedProducts = await getProducts();
+      } else if (catIdOrString === "new") {
+        // "New"
+        fetchedProducts = await getNewProducts();
+      } else {
+        // Real category ID (number)
+        fetchedProducts = await getProductsByCategory(catIdOrString);
+      }
+
+      setActiveProducts(fetchedProducts);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div className="bg-mainColorDark py-20">
       <Container>
@@ -10,35 +39,38 @@ function OurCollections({ collectionCharacters }) {
           Our Collections
         </h3>
 
-        <div className="flex gap-3 md:gap-20 uppercase text-lg md:text-2xl pb-16">
-          <p>All</p>
-          <p>Listed</p>
-          <p>New</p>
-          <p>Collections 1</p>
-        </div>
+        {/* Categories List */}
+        <div className="flex flex-wrap gap-3 md:gap-20 uppercase text-base md:text-2xl pb-16">
+          {/* Manual "All" */}
+          <p
+            className="cursor-pointer"
+            onClick={() => handleCategoryClick("all")}
+          >
+            All
+          </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-          {collectionCharacters?.data?.map((character, index) => (
-            <div key={character.name} className="flex flex-col">
-              <div className="bg-white p-7 flex flex-col">
-                <p className="text-mainColorDark font-oswald font-bold text-center text-lg pb-4">
-                  {character.name}
-                </p>
-                <Image
-                  src={character.icon}
-                  width={200}
-                  height={500}
-                  quality={100}
-                  alt={character.name}
-                  className="w-[300px]"
-                />
-              </div>
-              <p className="uppercase pt-3 font-poppins text-lg">
-                Collections {index + 1}
-              </p>
-            </div>
+          {/* Manual "New" */}
+          <p
+            className="cursor-pointer"
+            onClick={() => handleCategoryClick("new")}
+          >
+            New
+          </p>
+
+          {/* Render categories from the API */}
+          {categories?.data?.map((category) => (
+            <p
+              className="cursor-pointer"
+              key={category.slug}
+              onClick={() => handleCategoryClick(category.id)}
+            >
+              {category.name}
+            </p>
           ))}
         </div>
+
+        {/* Slider that shows products for the currently selected "category" */}
+        <SliderEmbla data={activeProducts?.data} type="project" />
       </Container>
     </div>
   );

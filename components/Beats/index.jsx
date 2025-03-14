@@ -26,7 +26,7 @@ function Beats({ props }) {
             <Image
               src={`/images/birds-heads/3.png`}
               alt="Bird head"
-              className={`${styles.headAnimation} w-[100px] md:w-[200px] brightness-0 invert absolute top-[-65px] md:top-[-130px] right-[-30px] md:right-[-60px] z-[99]`}
+              className={`${styles.headAnimation} w-[100px] md:w-[100px] brightness-0 invert absolute top-[-65px] md:top-[-130px] right-[-30px] md:right-[-20px] z-[99]`}
               width={200}
               height={200}
             />
@@ -34,7 +34,7 @@ function Beats({ props }) {
             <Image
               src={props.image_1}
               alt="Bird head"
-              className="w-[300px] md:w-[700px] relative z-20 "
+              className="w-[300px] md:w-[800px] relative z-20 "
               width={700}
               height={700}
               quality={100}

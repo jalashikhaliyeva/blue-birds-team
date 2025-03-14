@@ -32,7 +32,7 @@ const EmblaCarousel = ({ slides, options, autoScrollOptions }) => {
           alignItems: "center",
           whiteSpace: "nowrap",
           marginLeft: index === 0 ? "0" : "46px",
-          marginRight: index === segments.length - 1 ? "0" : "130px",
+          marginRight: index === segments.length - 1 ? "0" : "80px",
         }}
       >
         <span className="text-mainColorDark font-oswald font-semibold text-6xl md:text-140 uppercase">
@@ -46,7 +46,7 @@ const EmblaCarousel = ({ slides, options, autoScrollOptions }) => {
               key={`img-${index}`}
               src={slide.icons[index % slide.icons.length]}
               alt="bird head"
-              className="w-[160px] md:w-[190px] pt-[20px]"
+              className="w-[160px] md:w-[120px] pt-[30px]"
             />
           )}
       </span>

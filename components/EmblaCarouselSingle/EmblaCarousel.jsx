@@ -21,7 +21,7 @@ const EmblaCarousel = ({ slides, options, autoScrollOptions }) => {
         <img
           src={images[0]}
           alt="Bird Head"
-          style={{ width: "40px", height: "auto" }}
+          style={{ width: "30px", height: "auto" }}
         />
         <img
           src={images[1]}

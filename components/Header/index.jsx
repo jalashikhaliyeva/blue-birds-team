@@ -1,19 +1,24 @@
 import Image from "next/image";
 import React from "react";
-import {
-  FaInstagram,
-  FaTwitter,
-  FaGooglePlusG,
-  FaFacebookF,
-} from "react-icons/fa";
+
 function Header({ props }) {
+  // Helper function to construct a proper URL
+  const getLink = (link) => {
+    // If the link starts with "http", return it as is
+    if (link.startsWith("http")) return link;
+    // If the link does not include a dot, assume it's a name like "twitter"
+    if (!link.includes(".")) return `https://${link}.com`;
+    // Otherwise, prepend https:// (this case might not occur but just in case)
+    return `https://${link}`;
+  };
+
   return (
-    <div className="flex justify-between p-0">
+    <div className="flex justify-between p-0 relative z-10">
       <div className="flex w-[160px] md:w-[240px] p-0">
         <Image
           src={props.main.image}
           alt="Logo Blue Birds"
-          layout="shift"
+          layout="responsive"
           placeholder="blur"
           width={200}
           height={200}
@@ -27,11 +32,7 @@ function Header({ props }) {
           props.social_link.map((social, index) => (
             <a
               key={index}
-              href={
-                social.link.startsWith("http")
-                  ? social.link
-                  : `https://${social.link}`
-              }
+              href={getLink(social.link)}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-mainColorDark p-2 rounded-lg cursor-pointer"
