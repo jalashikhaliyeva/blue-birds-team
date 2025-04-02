@@ -37,7 +37,7 @@ const EmblaCarousel = ({ slides, options, autoScrollOptions }) => {
       <div className={styles.embla__viewport} ref={emblaRef}>
         <div className={styles.embla__container}>
           {slides.map((slide, index) => (
-            <div className={styles.embla__slide} key={index}>
+            <div className={styles.embla__slide} key={`${slide.id}-${index}`}>
               <div className={styles.box}>
                 {renderSlideContent(slide.images)}
               </div>

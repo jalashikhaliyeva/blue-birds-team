@@ -75,7 +75,8 @@ const SliderEmbla = ({ data, type }) => {
           {data?.map((slide, index) => (
             <div
               className={`${styles.embla__slide} lg:flex-[0_0_35%] px-2`}
-              key={slide.id}
+              key={slide.id ? slide.id : index}
+
             >
               <div
                 className="group flex flex-col w-full bg-boxGrayBodyColor  bg-white  transition-transform duration-300 cursor-pointer"

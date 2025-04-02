@@ -62,7 +62,7 @@ const EmblaCarousel = ({ slides, options, autoScrollOptions }) => {
           }`}
         >
           {slides.map((slide, index) => (
-            <div className={styles.embla__slide} key={index}>
+            <div className={styles.embla__slide}  key={`slides-${slide.id}-${index}`}>
               <div
                 className={`${styles.box} ${
                   isAboutPage ? styles.boxWhite : ""
