@@ -8,7 +8,7 @@ import { GrFormPrevious } from "react-icons/gr";
 import Image from "next/image";
 
 const SliderEmbla = ({ data, type }) => {
-  console.log(data, "data slider");
+  // console.log(data, "data slider");
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
     containScroll: "trimSnaps",

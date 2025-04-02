@@ -22,8 +22,8 @@ export async function getServerSideProps() {
 
 
 function Test({data , singleCollection}) {
-  console.log(data, "data");
-  console.log(singleCollection, "singleCollection");
+  // console.log(data, "data");
+  // console.log(singleCollection, "singleCollection");
   
   return (
     <div>Test</div>

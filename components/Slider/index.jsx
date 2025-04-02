@@ -5,8 +5,8 @@ import EmblaCarousel from "../EmblaCarousel/EmblaCarousel";
 function Slider({ slidesData }) {
   const OPTIONS = { loop: true };
   // Auto-scroll configurations remain the same.
-  const autoScrollLeft = { playOnInit: true, interval: 8000, speed: -1 };
-  const autoScrollRight = { playOnInit: true, interval: 8000, speed: 1 };
+  const autoScrollLeft = { playOnInit: true, interval: 8000, speed: -0.90 };
+  const autoScrollRight = { playOnInit: true, interval: 8000, speed: 0.90 };
 
   const slidesArr = Array.from({ length: 10 }, () => ({
     text: slidesData[0].title,
