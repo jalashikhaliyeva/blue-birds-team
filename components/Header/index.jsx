@@ -4,17 +4,14 @@ import React from "react";
 function Header({ props }) {
   // Helper function to construct a proper URL
   const getLink = (link) => {
-    // If the link starts with "http", return it as is
     if (link.startsWith("http")) return link;
-    // If the link does not include a dot, assume it's a name like "twitter"
     if (!link.includes(".")) return `https://${link}.com`;
-    // Otherwise, prepend https:// (this case might not occur but just in case)
     return `https://${link}`;
   };
 
   return (
-    <div className="flex justify-between p-0 relative z-10">
-      <div className="flex w-[160px] md:w-[240px] p-0">
+    <div className="flex flex-col md:flex-row items-center md:items-center justify-center md:justify-between p-0 relative z-10">
+      <div className="flex mx-auto md:mx-0 w-[160px] md:w-[240px] p-0">
         <Image
           src={props.main.image}
           alt="Logo Blue Birds"
@@ -27,7 +24,8 @@ function Header({ props }) {
         />
       </div>
 
-      <div className="flex items-center gap-2">
+      {/* Hidden on mobile, visible on md+ */}
+      <div className="hidden md:flex items-center gap-2">
         {props.social_link &&
           props.social_link.map((social, index) => (
             <a

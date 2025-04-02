@@ -26,6 +26,7 @@
 } */
 @media (max-width: 480px) {
     .marquee__inner img {
+        margin-right: 150px;
         height: 40px !important;
     }
   }

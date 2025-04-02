@@ -46,7 +46,7 @@ const EmblaCarousel = ({ slides, options, autoScrollOptions }) => {
               key={`img-${index}`}
               src={slide.icons[index % slide.icons.length]}
               alt="bird head"
-              className="w-[80px] mb-[20px] mr-[-50px] md:mr-0 md:mb-0 md:w-[120px] pt-[30px]"
+              className="w-[55px] mb-[20px] mr-[-75px] md:mr-0 md:mb-0 md:w-[120px] pt-[30px]"
             />
           )}
       </span>

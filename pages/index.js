@@ -115,7 +115,7 @@ export default function Home({
             width={3300}
             height={1900}
             quality={100}
-            className="h-[750px] object-cover md:h-[2000px] xxl:h-[2120px]" // adjust mobile size (300px) as needed
+            className="h-[900px] object-cover md:h-[2000px] xxl:h-[2120px]" // adjust mobile size (300px) as needed
           />
         </div>
       </div>
