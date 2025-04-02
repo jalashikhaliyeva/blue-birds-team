@@ -109,16 +109,15 @@ export default function Home({
           />
         </div> */}
         <div className="absolute flex inset-0 z-[9999] items-center justify-center pt-[120px] xxl:pt-[100px]">
-  <Image
-    src={hero.hero.icon}
-    alt="Cocky"
-    width={3300}
-    height={1900}
-    quality={100}
-    className="h-[750px] md:h-[2000px] xxl:h-[2120px]" // adjust mobile size (300px) as needed
-  />
-</div>
-
+          <Image
+            src={hero.hero.icon}
+            alt="Cocky"
+            width={3300}
+            height={1900}
+            quality={100}
+            className="h-[750px] object-cover md:h-[2000px] xxl:h-[2120px]" // adjust mobile size (300px) as needed
+          />
+        </div>
       </div>
 
       <Beats props={about.data} />
