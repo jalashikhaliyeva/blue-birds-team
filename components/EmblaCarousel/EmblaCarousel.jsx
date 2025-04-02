@@ -35,7 +35,7 @@ const EmblaCarousel = ({ slides, options, autoScrollOptions }) => {
           marginRight: index === segments.length - 1 ? "0" : "80px",
         }}
       >
-        <span className="text-mainColorDark font-oswald font-semibold text-6xl md:text-140 uppercase">
+        <span className="text-mainColorDark font-oswald font-semibold  text-5xl md:text-6xl md:text-140 uppercase">
           {pairText}
         </span>
         {/* Add image for all but the last segment */}
@@ -46,7 +46,7 @@ const EmblaCarousel = ({ slides, options, autoScrollOptions }) => {
               key={`img-${index}`}
               src={slide.icons[index % slide.icons.length]}
               alt="bird head"
-              className="w-[160px] md:w-[120px] pt-[30px]"
+              className="w-[80px] mb-[20px] mr-[-50px] md:mr-0 md:mb-0 md:w-[120px] pt-[30px]"
             />
           )}
       </span>

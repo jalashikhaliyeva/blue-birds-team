@@ -19,7 +19,7 @@ function Slider({ slidesData }) {
   }));
 
   return (
-    <div className="z-10 pt-[150px]">
+    <div className="z-10 pt-5 md:pt-[150px]">
       <EmblaCarousel
         slides={slidesArr}
         options={OPTIONS}
