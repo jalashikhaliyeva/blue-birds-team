@@ -19,11 +19,12 @@ function About({ props }) {
             />
           </div>
           <div
-            onClick={() => window.open(props.link_1, "_blank")}
-            className="font-oswald cursor-pointer pt-[100px] pl-7 md:pl-0 font-semibold text-base md:text-6xl uppercase text-mainColorDark  pb-4 md:pt-[260px] md:pb-0"
-          >
-            <h2 className="cursor-pointer">{props.title}</h2>
-          </div>
+  onClick={() => window.open(props.link_1, "_blank")}
+  className="font-oswald cursor-pointer pt-[100px] pl-7 md:pl-0 font-semibold text-base md:text-6xl uppercase text-mainColorDark pb-4 md:pt-[260px] md:pb-0"
+>
+  <h2 className={`${styles.titleUnderline}`}>{props.title}</h2>
+</div>
+
         </div>
       </Container>
 
