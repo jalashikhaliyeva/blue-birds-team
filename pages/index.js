@@ -275,7 +275,7 @@ export default function Home({
   </div>
 
   {/* For mobile and smaller devices */}
-  <div className="absolute flex md:hidden inset-0 z-[9999] items-center justify-center pt-[120px]">
+  {/* <div className="absolute flex md:hidden inset-0 z-[9999] items-center justify-center pt-[120px]">
     <Image
       src={hero.hero.thumb_icon}
       alt="Cocky Thumbnail"
@@ -285,7 +285,7 @@ export default function Home({
       layout="responsive"
       className="h-[650px]  object-cover"
     />
-  </div>
+  </div> */}
 </div>
 
       </div>
