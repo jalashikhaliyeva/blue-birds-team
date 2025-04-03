@@ -261,9 +261,9 @@ export default function Home({
             className="h-[2000px] xxl:h-[2120px]"
           />
         </div> */}
-   
+   <div>
   {/* For tablet and larger */}
-  <div className="absolute flex inset-0 z-[9999] items-center justify-center pt-[120px] xxl:pt-[100px]">
+  <div className="absolute hidden md:flex inset-0 z-[9999] items-center justify-center pt-[120px] xxl:pt-[100px]">
     <Image
       src={hero.hero.icon}
       alt="Cocky"
@@ -275,18 +275,18 @@ export default function Home({
   </div>
 
   {/* For mobile and smaller devices */}
-  {/* <div className="absolute flex md:hidden inset-0 z-[9999] items-center justify-center pt-[120px]">
+  <div className="absolute flex md:hidden inset-0 z-[9999] items-center justify-center pt-[120px]">
     <Image
       src={hero.hero.thumb_icon}
       alt="Cocky Thumbnail"
-      width={400}  // adjust dimensions as needed
+      width={300}  // adjust dimensions as needed
       height={700} // adjust dimensions as needed
       quality={100}
       layout="responsive"
-      className="h-[550px]  object-cover"
+      className="h-[650px]  object-cover"
     />
-  </div> */}
-
+  </div>
+</div>
 
       </div>
 
