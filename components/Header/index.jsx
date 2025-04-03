@@ -24,7 +24,7 @@ function Header({ props }) {
         /> */}
       </div>
       <div className="flex  md:hidden mx-auto md:mx-0 w-[160px] md:w-[240px] p-0">
-        <Image
+        {/* <Image
           src='/images/logo/logo-3.png'
           alt="Logo Blue Birds"
           layout="responsive"
@@ -33,7 +33,7 @@ function Header({ props }) {
           height={200}
           blurDataURL="/images/blur/blur.avif"
           className="w-full"
-        />
+        /> */}
       </div>
 
       {/* Hidden on mobile, visible on md+ */}

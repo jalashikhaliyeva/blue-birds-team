@@ -55,7 +55,7 @@ function Footer({ props }) {
             /> */}
           </div>
           <div className="flex md:hidden w-[220px]">
-            <Image
+            {/* <Image
               src='/images/logo/logo-3.png'
               alt="Logo Blue Birds"
               layout="shift"
@@ -64,7 +64,7 @@ function Footer({ props }) {
               height={200}
               blurDataURL="/images/blur/blur.avif"
               className="w-full"
-            />
+            /> */}
           </div>
           <div className="flex items-center gap-2 mt-4">
             {props.social_link &&
