@@ -108,15 +108,15 @@ export default function Home({
             className="h-[2000px] xxl:h-[2120px]"
           />
         </div> */}
-        <div className="absolute flex inset-0 z-[9999] items-center justify-center pt-[120px] xxl:pt-[100px]">
+        <div className="absolute  hidden md:flex  inset-0 z-[9999] items-center justify-center pt-[120px] xxl:pt-[100px]">
           <Image
             src={hero.hero.icon}
             alt="Cocky"
             width={3300}
             height={1900}
             quality={100}
-            layout="responsive"
-            className="h-[900px] object-cover md:h-[2000px] xxl:h-[2120px]"
+       
+            className="h-[900px] object-cover md:h-[2000px] xxl:h-[2120px]" // adjust mobile size (300px) as needed
           />
         </div>
       </div>
