@@ -43,7 +43,7 @@ function Footer({ props }) {
         {/* Left Section */}
         <div className="flex flex-col">
           <div className="hidden md:flex w-[220px]">
-            <Image
+            {/* <Image
               src={props.main.image}
               alt="Logo Blue Birds"
               layout="shift"
@@ -52,7 +52,7 @@ function Footer({ props }) {
               height={200}
               blurDataURL="/images/blur/blur.avif"
               className="w-full"
-            />
+            /> */}
           </div>
           <div className="flex md:hidden w-[220px]">
             <Image
