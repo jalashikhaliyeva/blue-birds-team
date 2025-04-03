@@ -281,7 +281,7 @@ export default function Home({
               height={700} // adjust dimensions as needed
               quality={100}
               layout="responsive"
-              className="h-[750px]  object-cover"
+              className="!h-[750px]  object-cover"
             />
           </div>
         </div>

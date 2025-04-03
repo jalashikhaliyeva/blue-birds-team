@@ -23,13 +23,13 @@ function Beats({ props }) {
           />
 
           <div className="relative flex gap-0 mt-6 lg:mt-0">
-            <Image
+            {/* <Image
               src={`/images/birds-heads/3.png`}
               alt="Bird head"
               className={`${styles.headAnimation} w-[100px] md:w-[100px] brightness-0 invert absolute top-[-65px] md:top-[-130px] right-[-30px] md:right-[-20px] z-[99]`}
               width={200}
               height={200}
-            />
+            /> */}
 
             <Image
               src={props.image_1}
