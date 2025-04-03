@@ -235,6 +235,9 @@ export default function Home({
     };
   });
 
+  console.log(hero, "hero");
+  
+
   return (
     <>
       <div
@@ -258,17 +261,32 @@ export default function Home({
             className="h-[2000px] xxl:h-[2120px]"
           />
         </div> */}
-        <div className="absolute flex  inset-0 z-[9999] items-center justify-center pt-[120px] xxl:pt-[100px]">
-          <Image
-            src={hero.hero.icon}
-            alt="Cocky"
-            width={1300}
-            height={900}
-            quality={100}
-       
-            className="h-[900px] object-cover md:h-[2000px] xxl:h-[2120px]" // adjust mobile size (300px) as needed
-          />
-        </div>
+   <div>
+  {/* For tablet and larger */}
+  <div className="absolute hidden md:flex inset-0 z-[9999] items-center justify-center pt-[120px] xxl:pt-[100px]">
+    <Image
+      src={hero.hero.icon}
+      alt="Cocky"
+      width={1300}
+      height={900}
+      quality={100}
+      className="h-[900px] object-cover md:h-[2000px] xxl:h-[2120px]"
+    />
+  </div>
+
+  {/* For mobile and smaller devices */}
+  <div className="absolute flex md:hidden inset-0 z-[9999] items-center justify-center pt-[120px]">
+    <Image
+      src={hero.hero.thumb_icon}
+      alt="Cocky Thumbnail"
+      width={400}  // adjust dimensions as needed
+      height={700} // adjust dimensions as needed
+      quality={100}
+      className="h-[550px]  object-cover"
+    />
+  </div>
+</div>
+
       </div>
 
       <Beats props={about.data} />
