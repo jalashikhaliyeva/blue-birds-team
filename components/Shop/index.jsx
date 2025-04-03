@@ -15,7 +15,7 @@ function Shop({ collectionCharacters, shopProducts }) {
           {shopProducts?.data.map((character, index) => (
             <Link key={index} href={character.link}>
               <div className="flex flex-col cursor-pointer">
-                <div className="flex flex-col bg-white py-5">
+                <div className="flex flex-col rounded-lg bg-white py-5">
                   <p className="font-poppins text-2xl text-center font-semibold text-mainColorDark">
                     {character.name}
                   </p>

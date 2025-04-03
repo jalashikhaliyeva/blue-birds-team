@@ -79,7 +79,7 @@ const SliderEmbla = ({ data, type }) => {
 
             >
               <div
-                className="group flex flex-col w-full bg-boxGrayBodyColor  bg-white  transition-transform duration-300 cursor-pointer"
+                className="group flex flex-col w-full bg-boxGrayBodyColor rounded-lg  bg-white  transition-transform duration-300 cursor-pointer"
                 onClick={() => handleCardClick(slide.slug)}
               >
                 <p className="text-mainColorDark pt-4 font-oswald font-bold text-center text-lg pb-4">

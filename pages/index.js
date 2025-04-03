@@ -176,6 +176,7 @@ import {
 } from "@/lib/api";
 import { getOpenSeaAssets } from "@/lib/openseaApi";
 import Image from "next/image";
+import BgImage from "@/components/BgImage";
 
 export async function getServerSideProps() {
   try {
@@ -309,6 +310,7 @@ export default function Home({
         options={OPTIONS}
         autoScrollOptions={autoScrollLeft}
       />
+      <BgImage />
 
       <ViewOnOpenSea collectionCharacters={category} />
       <Shop shopProducts={shopProducts} collectionCharacters={category} />

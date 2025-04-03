@@ -42,8 +42,8 @@ function Footer({ props }) {
         />
         {/* Left Section */}
         <div className="flex flex-col">
-          <div className="w-[220px]">
-            {/* <Image
+          <div className="hidden md:flex w-[220px]">
+            <Image
               src={props.main.image}
               alt="Logo Blue Birds"
               layout="shift"
@@ -52,7 +52,19 @@ function Footer({ props }) {
               height={200}
               blurDataURL="/images/blur/blur.avif"
               className="w-full"
-            /> */}
+            />
+          </div>
+          <div className="flex md:hidden w-[220px]">
+            <Image
+              src='/images/logo/logo-3.png'
+              alt="Logo Blue Birds"
+              layout="shift"
+              placeholder="blur"
+              width={200}
+              height={200}
+              blurDataURL="/images/blur/blur.avif"
+              className="w-full"
+            />
           </div>
           <div className="flex items-center gap-2 mt-4">
             {props.social_link &&
