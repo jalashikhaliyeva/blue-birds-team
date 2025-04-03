@@ -4,6 +4,8 @@ import Image from "next/image";
 import styles from "./style.module.css";
 
 function Beats({ props }) {
+  console.log(props, "props beats");
+  
   const descriptionHtml = props.description
     .replace(/<b>/g, '<span class="font-semibold">')
     .replace(/<\/b>/g, "</span>");
@@ -18,18 +20,18 @@ function Beats({ props }) {
         <div className="flex flex-col lg:flex-row justify-between items-center">
           <p
             data-aos="fade-right"
-            className="font-poppins text-base md:text-lg max-w-full md:max-w-[300px] py-6 md:py-9"
+            className="font-poppins text-base md:text-lg max-w-full w-1/2 py-6 md:py-9"
             dangerouslySetInnerHTML={{ __html: descriptionHtml }}
           />
 
-          <div className="relative flex gap-0 mt-6 lg:mt-0">
-            {/* <Image
-              src={`/images/birds-heads/3.png`}
+          <div className="relative w-1/2 flex gap-0 mt-6 lg:mt-0">
+            <Image
+              src={`/images/birds-heads/head3.webp`}
               alt="Bird head"
               className={`${styles.headAnimation} w-[100px] md:w-[100px] brightness-0 invert absolute top-[-65px] md:top-[-130px] right-[-30px] md:right-[-20px] z-[99]`}
               width={200}
               height={200}
-            /> */}
+            />
 
             <Image
               src={props.image_1}

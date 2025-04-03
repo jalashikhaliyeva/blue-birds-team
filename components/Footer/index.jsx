@@ -33,13 +33,13 @@ function Footer({ props }) {
   return (
     <Container>
       <div className="flex flex-col gap-3 lg:gap-0 lg:flex-row justify-between items-center py-20 relative">
-        {/* <Image
-          src={`/images/birds-heads/1.png`}
+        <Image
+          src={`/images/birds-heads/head1.webp`}
           alt="Bird head"
           className="w-[200px] absolute top-[20px] right-[910px] z-[99] scale-x-[-1] hidden lg:block"
           width={200}
           height={200}
-        /> */}
+        />
         {/* Left Section */}
         <div className="flex flex-col">
           <div className="w-[220px]">

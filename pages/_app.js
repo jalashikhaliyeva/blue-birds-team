@@ -2,11 +2,12 @@ import "@/styles/globals.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 export default function App({ Component, pageProps }) {
   const router = useRouter();
+  const [loading, setLoading] = useState(false)
   useEffect(() => {
     AOS.init({
       duration: 2000,
@@ -35,6 +36,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
+     {loading && <div className="loading">Loading...</div>}
       <Component {...pageProps} />
       <ToastContainer />
     </>

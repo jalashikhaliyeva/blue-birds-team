@@ -11,8 +11,8 @@ function Header({ props }) {
 
   return (
     <div className="flex flex-col md:flex-row items-center md:items-center justify-center md:justify-between p-0 relative z-10">
-      <div className="flex mx-auto md:mx-0 w-[160px] md:w-[240px] p-0">
-        {/* <Image
+      <div className="hidden  md:flex mx-auto md:mx-0 w-[160px] md:w-[240px] p-0">
+        <Image
           src={props.main.image}
           alt="Logo Blue Birds"
           layout="responsive"
@@ -21,7 +21,19 @@ function Header({ props }) {
           height={200}
           blurDataURL="/images/blur/blur.avif"
           className="w-full"
-        /> */}
+        />
+      </div>
+      <div className="flex  md:hidden mx-auto md:mx-0 w-[160px] md:w-[240px] p-0">
+        <Image
+          src='/images/logo/logo-3.png'
+          alt="Logo Blue Birds"
+          layout="responsive"
+          placeholder="blur"
+          width={200}
+          height={200}
+          blurDataURL="/images/blur/blur.avif"
+          className="w-full"
+        />
       </div>
 
       {/* Hidden on mobile, visible on md+ */}

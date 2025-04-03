@@ -148,7 +148,12 @@
 // }
 
 import About from "@/components/About";
-import Beats from "@/components/Beats";
+import dynamic from "next/dynamic";
+
+// Import About with SSR disabled.
+const Beats = dynamic(() => import("@/components/Beats"), { ssr: false });
+
+// import Beats from "@/components/Beats";
 import Container from "@/components/Container";
 import EmblaCarousel from "@/components/EmblaCarouselSingle/EmblaCarousel";
 import Footer from "@/components/Footer";
@@ -234,7 +239,7 @@ export default function Home({
     };
   });
 
-  // console.log(hero, "hero");
+  console.log(settings, "settings");
 
   return (
     <>
@@ -281,7 +286,7 @@ export default function Home({
               height={700} // adjust dimensions as needed
               quality={100}
               layout="responsive"
-              className="!h-[750px]  object-cover"
+              className="!h-[900px]  object-cover"
             />
           </div>
         </div>
