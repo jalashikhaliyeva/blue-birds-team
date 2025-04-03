@@ -10,17 +10,19 @@ function Team({ teamData }) {
       </h6>
       <Container>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5 ">
-          {teamData?.data?.map((member) => (
-            <div className="flex flex-col">
-              <Image width={400} height={500} alt="Bykush" src={member.icon} />
-              <p className="font-poppins text-2xl text-center font-semibold text-mainColorDark">
-                {member.name}
-              </p>
-              <p className="font-poppins text-lg text-center font-normal text-gray-500">
-                {member.profession}
-              </p>
-            </div>
-          ))}
+        {teamData?.data?.map((member, index) => (
+  <div key={index} className="flex flex-col">
+    <Image width={400} height={500} alt="Bykush" src={member.icon} />
+    <p className="font-poppins text-2xl text-center font-semibold text-mainColorDark">
+      {member.name}
+    </p>
+    <p className="font-poppins text-lg text-center font-normal text-gray-500">
+      {member.profession}
+    </p>
+  </div>
+))}
+
+
         </div>
       </Container>
     </div>
