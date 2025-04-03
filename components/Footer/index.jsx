@@ -56,7 +56,7 @@ function Footer({ props }) {
           </div> */}
           <div className="flex w-[220px]">
             <Image
-              src='/images/logo/logo-3.png'
+              src='/images/logo/logo-3-min.png'
               alt="Logo Blue Birds"
               layout="shift"
               placeholder="blur"

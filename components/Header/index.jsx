@@ -25,7 +25,7 @@ function Header({ props }) {
       </div> */}
       <div className="flex  mx-auto md:mx-0 w-[160px] md:w-[240px] p-0">
         <Image
-          src='/images/logo/logo-3.png'
+          src='/images/logo/logo-3-min.png'
           alt="Logo Blue Birds"
           layout="responsive"
           placeholder="blur"
