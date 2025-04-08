@@ -1,9 +1,10 @@
+// components/Shop.js
 import React from "react";
 import Container from "../Container";
-import Image from "next/image";
 import Link from "next/link";
+import HoverImage from "../HoverImage";
 
-function Shop({ collectionCharacters, shopProducts }) {
+function Shop({ shopProducts }) {
   return (
     <div className="bg-mainColorDark py-12">
       <h4 className="uppercase text-3xl md:text-6xl font-oswald font-semibold text-center pb-10">
@@ -19,11 +20,13 @@ function Shop({ collectionCharacters, shopProducts }) {
                   <p className="font-poppins text-2xl text-center font-semibold text-mainColorDark">
                     {character.name}
                   </p>
-                  <Image
+                  {/* <-- Here’s our hover‐zoom image --> */}
+                  <HoverImage
+                    src={character.image}
+                    alt={character.name}
                     width={400}
                     height={500}
-                    alt="Bykush"
-                    src={character.image}
+                    className="h-[350px] object-cover mt-4"
                   />
                 </div>
                 <p className="uppercase pt-3 font-poppins text-lg">

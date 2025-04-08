@@ -11,7 +11,10 @@ function About({ props }) {
     <>
       <Container>
         <div className="flex gap-5 justify-between pt-[180px] pb-5  md:pt-[200px] md:pb-[100px]">
-          <div data-aos="fade-right" className="max-w-[160px]  pt-[80px] md:pt-0 md:max-w-[290px]">
+          <div
+            data-aos="fade-right"
+            className="max-w-[160px]  pt-[80px] md:pt-0 md:max-w-[290px]"
+          >
             <h1
               onClick={() => window.open(props.link_2, "_blank")}
               className="font-poppins text-xs max-w-[100px] md:max-w-screen md:text-lg font-medium pt-7 text-mainColorDark cursor-pointer"
@@ -19,12 +22,19 @@ function About({ props }) {
             />
           </div>
           <div
-  onClick={() => window.open(props.link_1, "_blank")}
-  className="font-oswald cursor-pointer pt-[100px] pl-7 md:pl-0 font-semibold text-base md:text-6xl uppercase text-mainColorDark pb-4 md:pt-[260px] md:pb-0"
->
-  <h2 className={`${styles.titleUnderline}`}>{props.title}</h2>
-</div>
-
+            onClick={() => window.open(props.link_1, "_blank")}
+            className="font-oswald cursor-pointer pt-[100px] pl-7 md:pl-0 font-semibold text-base md:text-6xl uppercase text-mainColorDark pb-4 md:pt-[260px] md:pb-0"
+          >
+            <h2 className={`${styles.titleUnderline}`}>{props.title}</h2>
+            <div className="mb-5 flex  items-center justify-center m-auto flex-row gap-1 w-[100px] md:w-[370px] pb-10">
+        <hr className="w-full border-t-4 border-mainColorDark my-2" />
+        <hr className="w-[40px] border-t-4 border-mainColorDark my-2" />
+        <hr className="w-[34px] border-t-4 border-mainColorDark my-2" />
+        <hr className="w-[34px] border-t-4 border-mainColorDark my-2" />
+        <hr className="w-[34px] border-t-4 border-mainColorDark my-2" />
+        <hr className="w-[14px] border-t-4 border-mainColorDark my-2" />
+      </div>
+          </div>
         </div>
       </Container>
 

@@ -234,13 +234,13 @@ export default function Home({
   const OPTIONS = { loop: true };
   const autoScrollLeft = { playOnInit: true, interval: 8000, speed: -1 };
   const slides = Array.from({ length: 22 }, (_, i) => {
-    const item = slider.data[i % slider.data.length];
+    const item = slider?.data[i % slider?.data?.length];
     return {
-      images: [item.icon, item.image],
+      images: [item?.icon, item?.image],
     };
   });
 
-  console.log(settings, "settings");
+  console.log(shopProducts, "shopProducts");
 
   return (
     <>
@@ -310,9 +310,9 @@ export default function Home({
         options={OPTIONS}
         autoScrollOptions={autoScrollLeft}
       />
+      <ViewOnOpenSea collectionCharacters={category} />
       <BgImage />
 
-      <ViewOnOpenSea collectionCharacters={category} />
       <Shop shopProducts={shopProducts} collectionCharacters={category} />
       <Team teamData={team} />
       <Footer props={settings} />
