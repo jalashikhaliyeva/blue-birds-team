@@ -177,6 +177,7 @@ import {
 import { getOpenSeaAssets } from "@/lib/openseaApi";
 import Image from "next/image";
 import BgImage from "@/components/BgImage";
+import Head from "next/head";
 
 export async function getServerSideProps() {
   try {
@@ -240,10 +241,38 @@ export default function Home({
     };
   });
 
-  console.log(shopProducts, "shopProducts");
+  const meta = settings?.meta_tags?.[0] || {};
+  console.log(settings, "settings");
 
   return (
-    <>
+    <main>
+      <Head>
+        {/* page title */}
+        {meta.meta_title && <title>{meta.meta_title}</title>}
+
+        {/* standard meta tags */}
+        {meta.meta_description && (
+          <meta name="description" content={meta.meta_description} />
+        )}
+        {meta.meta_keywords && (
+          <meta name="keywords" content={meta.meta_keywords} />
+        )}
+
+        {/* favicon / touch icon */}
+        {/* {settings?.main?.favicon && (
+          <link rel="icon" href={settings.main.favicon} />
+        )} */}
+        {settings?.main?.image && (
+          <link rel="apple-touch-icon" href={settings.main.image} />
+        )}
+
+        {/* you can also add Open Graph / Twitter tags here if you like */}
+        {/* e.g.
+          <meta property="og:title" content={meta.meta_title} />
+          <meta property="og:description" content={meta.meta_description} />
+          <meta property="og:image" content={hero.hero.icon} />
+        */}
+      </Head>
       <div
         className="relative bg-no-repeat bg-cover bg-bottom min-h-screen p-0"
         style={{ backgroundImage: `url(${hero.hero.background})` }}
@@ -316,6 +345,6 @@ export default function Home({
       <Shop shopProducts={shopProducts} collectionCharacters={category} />
       <Team teamData={team} />
       <Footer props={settings} />
-    </>
+    </main>
   );
 }
