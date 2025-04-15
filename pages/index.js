@@ -241,8 +241,10 @@ export default function Home({
     };
   });
 
+  // console.log(slider, "slider");
+
   const meta = settings?.meta_tags?.[0] || {};
-  console.log(settings, "settings");
+  // console.log(settings, "settings");
 
   return (
     <main>

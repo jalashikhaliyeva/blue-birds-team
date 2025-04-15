@@ -3,14 +3,32 @@ import React from "react";
 import Container from "../Container";
 import Link from "next/link";
 import HoverImage from "../HoverImage";
+import Image from "next/image";
 
 function Shop({ shopProducts }) {
   return (
     <div className="bg-mainColorDark py-12">
-      <h4 className="uppercase text-3xl md:text-6xl font-oswald font-semibold text-center pb-10">
-        Shop
-      </h4>
+      {/* Sticky header with centered title + absolute image */}
+      <div className=" top-0 bg-mainColorDark z-10">
+        <Container>
+          <div className="relative py-6">
+            {/* Centered title */}
+            <h4 className="uppercase text-3xl md:text-6xl font-oswald font-semibold text-center text-white">
+              Shop
+            </h4>
+            {/* Absolute image positioned left of the exact center */}
+            <Image
+              src="/images/birds-heads/head1.png"
+              alt="Bird Head"
+              width={60}
+              height={60}
+              className="absolute top-1/2 left-[300px] w-[140px] -translate-x-full translate-x-4 -translate-y-1/2 filter brightness-0 invert"
+            />
+          </div>
+        </Container>
+      </div>
 
+      {/* Product grid */}
       <Container>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5 py-10">
           {shopProducts?.data.map((character, index) => (
@@ -20,7 +38,7 @@ function Shop({ shopProducts }) {
                   <p className="font-poppins text-2xl text-center font-semibold text-mainColorDark">
                     {character.name}
                   </p>
-                  {/* <-- Here’s our hover‐zoom image --> */}
+                  {/* Hover‐zoom image */}
                   <HoverImage
                     src={character.image}
                     alt={character.name}
