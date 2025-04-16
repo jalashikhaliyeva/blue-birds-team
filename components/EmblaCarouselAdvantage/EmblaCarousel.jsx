@@ -64,9 +64,9 @@ const SliderEmbla = ({ data, type }) => {
     return () => clearInterval(interval);
   }, [emblaApi]);
 
-  const handleCardClick = (slug) => {
-    router.push(`/portfolio/${slug}`);
-  };
+  // const handleCardClick = (slug) => {
+  //   router.push(`/portfolio/${slug}`);
+  // };
 
   return (
     <div className={styles.embla}>
@@ -80,7 +80,7 @@ const SliderEmbla = ({ data, type }) => {
             >
               <div
                 className="group flex flex-col w-full bg-boxGrayBodyColor rounded-lg  bg-white  transition-transform duration-300 cursor-pointer"
-                onClick={() => handleCardClick(slide.slug)}
+                // onClick={() => handleCardClick(slide.slug)}
               >
                 <p className="text-mainColorDark pt-4 font-oswald font-bold text-center text-lg pb-4">
                   {slide.name}
