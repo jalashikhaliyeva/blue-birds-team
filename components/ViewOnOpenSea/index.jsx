@@ -9,7 +9,7 @@ function ViewOnOpenSea({ collectionCharacters }) {
         View on Opensea
       </h4>
 
-      <div className="mb-5 flex  items-center justify-center m-auto flex-row gap-1 w-[100px] md:w-[470px] pb-10">
+      <div className=" flex  items-center justify-center m-auto flex-row gap-1 w-[100px] md:w-[470px] pb-10">
         <hr className="w-full border-t-4 border-white my-2" />
         <hr className="w-[40px] border-t-4 border-white my-2" />
         <hr className="w-[34px] border-t-4 border-white my-2" />

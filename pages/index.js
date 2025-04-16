@@ -298,14 +298,14 @@ export default function Home({
         </div> */}
         <div>
           {/* For tablet and larger */}
-          <div className="absolute hidden md:flex inset-0 z-[9999] items-center justify-center pt-[120px] xxl:pt-[100px]">
+          <div className="absolute hidden md:flex inset-0 z-[9999]  items-center justify-center pt-[120px] xxl:pt-[100px]">
             <Image
               src={hero.hero.icon}
               alt="Cocky"
-              width={1300}
+              width={7300}
               height={900}
               quality={100}
-              className="h-[900px] object-cover md:h-[2000px] xxl:h-[2120px]"
+              className="h-[900px] object-cover md:h-[2100px] md:w-auto xxl:h-[2120px]"
             />
           </div>
 
@@ -314,8 +314,8 @@ export default function Home({
             <Image
               src={hero.hero.thumb_icon}
               alt="Cocky Thumbnail"
-              width={300} // adjust dimensions as needed
-              height={700} // adjust dimensions as needed
+              width={300} 
+              height={700} 
               quality={100}
               layout="responsive"
               className="!h-[900px]  object-cover"

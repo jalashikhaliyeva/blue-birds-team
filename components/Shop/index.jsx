@@ -18,11 +18,11 @@ function Shop({ shopProducts }) {
             </h4>
             {/* Absolute image positioned left of the exact center */}
             <Image
-              src="/images/birds-heads/head1.png"
+              src="/images/birds-heads/3.png"
               alt="Bird Head"
-              width={60}
-              height={60}
-              className="absolute top-1/2 left-[300px] w-[140px] -translate-x-full translate-x-4 -translate-y-1/2 filter brightness-0 invert"
+              width={90}
+              height={90}
+              className="absolute top-1/2 md:left-[300px] w-[140px] -translate-x-full translate-x-4 -translate-y-1/2 filter brightness-0 invert"
             />
           </div>
         </Container>
