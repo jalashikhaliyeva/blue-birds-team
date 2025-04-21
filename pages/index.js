@@ -314,8 +314,8 @@ export default function Home({
             <Image
               src={hero.hero.thumb_icon}
               alt="Cocky Thumbnail"
-              width={300} 
-              height={700} 
+              width={300}
+              height={700}
               quality={100}
               layout="responsive"
               className="!h-[820px]  object-cover"
