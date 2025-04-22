@@ -9,6 +9,8 @@ function Header({ props }) {
     return `https://${link}`;
   };
 
+  console.log(props, "props header");
+
   return (
     <div className="flex flex-col md:flex-row items-center md:items-center justify-center md:justify-between p-0 relative z-10">
       {/* <div className="hidden  md:flex mx-auto md:mx-0 w-[160px] md:w-[240px] p-0">
@@ -25,7 +27,7 @@ function Header({ props }) {
       </div> */}
       <div className="flex  mx-auto md:mx-0 w-[160px] md:w-[240px] p-0">
         <Image
-          src='/images/logo/logo-3-min.png'
+          src="/images/logo/logo-3-min.png"
           alt="Logo Blue Birds"
           layout="responsive"
           placeholder="blur"
@@ -37,14 +39,19 @@ function Header({ props }) {
       </div>
 
       {/* Hidden on mobile, visible on md+ */}
-      <div className="hidden md:flex items-center gap-2">
+      <div className="hidden md:flex items-center gap-2 cursor-pointer z-[999999999]">
         {props.social_link &&
           props.social_link.map((social, index) => (
             <a
               key={index}
-              href={getLink(social.link)}
+              href={
+                social.link.startsWith("http")
+                  ? social.link
+                  : `https://${social.link}`
+              }
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="bg-mainColorDark p-2 rounded-lg cursor-pointer"
             >
               <Image
