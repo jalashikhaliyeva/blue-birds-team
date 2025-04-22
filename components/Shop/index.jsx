@@ -35,7 +35,7 @@ function Shop({ shopProducts }) {
             <Link key={index} href={character.link}>
               <div className="flex flex-col cursor-pointer">
                 <div className="flex flex-col rounded-lg bg-white py-5">
-                  <p className="font-poppins text-2xl text-center font-bold text-mainColorDark">
+                  <p className="font-poppins text-base pb-3 text-center font-bold text-mainColorDark">
                     {character.name}
                   </p>
                   {/* Hover‐zoom image */}
