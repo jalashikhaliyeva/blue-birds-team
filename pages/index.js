@@ -298,7 +298,7 @@ export default function Home({
         </div> */}
         <div>
           {/* For tablet and larger */}
-          <div className="absolute hidden md:flex inset-0 z-[9999]  items-center justify-center pt-[120px] xxl:pt-[100px]">
+          <div className="absolute hidden md:flex inset-0 z-[9999]  items-center justify-center pt-[80px] xxl:pt-[100px]">
             <Image
               src={hero.hero.icon}
               alt="Cocky"
