@@ -305,7 +305,7 @@ export default function Home({
               width={7300}
               height={900}
               quality={100}
-              className="h-[900px] object-cover md:h-[1830px] md:w-auto xxl:h-[2120px]"
+              className="h-[900px] object-cover md:h-[1700px] md:w-auto xxl:h-[2120px]"
             />
           </div>
 
