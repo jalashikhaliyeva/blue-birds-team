@@ -1,4 +1,4 @@
-# 🚀 Bluebirds.team - NFT Project Landing
+#  Bluebirds.team - NFT Project Landing
 
 A Next.js landing page for NFT sales, dynamically powered by OpenSea API to showcase collections and assets.
 
@@ -25,8 +25,7 @@ A Next.js landing page for NFT sales, dynamically powered by OpenSea API to show
 - **NFT Data**: OpenSea API v2
 
 
-
-## 🚀 Live Site
+##  Live Site
 👉 [https://bluebirds.team](https://bluebirds.team)
 
 
